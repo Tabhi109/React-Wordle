@@ -17,7 +17,11 @@ const useWordle = (solution) => {
     }
 
     const handleKeyup = ({key}) => {
-        console.log(key);
+        if (/^[a-z]$/.test(key)) {
+            if (currentGuess.length < 5) {
+                setCurrentGuess((prev) => prev + key);
+            }
+        }
 
     }
 
