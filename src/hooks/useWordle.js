@@ -1,4 +1,5 @@
-const UseWordle = (solution) => {
+import {useState} from 'react';
+const useWordle = (solution) => {
 
     const [turn,setTurn] = useState(0);
     const [currentGuess,setCurrentGuess] = useState("");
@@ -6,7 +7,7 @@ const UseWordle = (solution) => {
     const [history,setHistory] = useState([]);
     const [isCorrect,setIsCorrect] = useState(false);
 
-    
+
     const formatGuess = () => {
 
     }
@@ -15,10 +16,13 @@ const UseWordle = (solution) => {
     
     }
 
-    const handleKeyup = () => {
+    const handleKeyup = ({key}) => {
+        console.log(key);
 
     }
 
+    return {turn,currentGuess,guesses,isCorrect,handleKeyup};
+
 }
 
-export default UseWordle;
+export default useWordle;
