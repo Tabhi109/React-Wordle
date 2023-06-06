@@ -35,15 +35,32 @@ code {
 .row > div.green {
   background-color: #5ac85a;
   border-color: green;
+  animation: flip 0.7s ease-in-out;
 }
 
 .row > div.grey {
   background-color: #a1a1a1;
   border-color: grey;
+  animation: flip 0.7s ease-in-out;
 }
 
 .row > div.yellow {
   background-color: #e2cc68;
   border-color: yellow;
+  animation: flip 0.7s ease-in-out;
 }
 
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  45% {
+    transform: rotateY(90deg);
+  }
+  55% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
