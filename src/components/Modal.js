@@ -1,6 +1,10 @@
 import React from 'react'
 
 export default function Modal({ isCorrect, solution, turn }) {
+  const handleNewGame = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="modal">
       {isCorrect && (
@@ -14,9 +18,10 @@ export default function Modal({ isCorrect, solution, turn }) {
         <div>
           <h1>Nevermind</h1>
           <p className="solution">{solution}</p>
-          <p>Better luck next time :)</p>
+          <p>Better luck next time 🙂</p>
         </div>
       )}
+      <button className='newGameButton' onClick={handleNewGame}>New Game</button>
     </div>
   )
 }

@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; /* Set a height for the header container */
+}
+
+.heading h1 {
+  margin: 0;
+}
+
 .row {
   text-align: center;
   display: flex;
@@ -69,16 +80,23 @@ code {
 .keypad {
   max-width: 500px;
   margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 .keypad > div {
   margin: 5px;
   width: 40px;
   height: 50px;
   background: #eee;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 6px;
   line-height: 50px;
 }
+
 .keypad > div.green {
   background: #5ac85a;
   color: #fff;
@@ -106,6 +124,9 @@ code {
   height: 100%;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .modal div {
   max-width: 480px;
@@ -114,6 +135,8 @@ code {
   border-radius: 10px;
   margin: 10% auto;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
 }
 .modal .solution {
   color: #ff004c;
@@ -123,6 +146,29 @@ code {
   letter-spacing: 1px;
 }
 
+.modal .newGameButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #5ac85a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  width: 120px;
+}
+
+.modal > div:last-child {
+
+  margin-bottom: 40px;
+}
 
 @keyframes flip {
   0% {
@@ -149,5 +195,42 @@ code {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .row > div {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
+  .keypad {
+    max-width: 400px;
+  }
+  .keypad > div {
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .row > div {
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+  .keypad {
+    max-width: 300px;
+  }
+  .keypad > div {
+    margin: 3px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
