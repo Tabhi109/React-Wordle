@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <div className="heading">
-        <h1 className='head'>Wordle</h1>
+        <h1 className='head'>Wordle Dash</h1>
       </div>
       
       {solution && <Wordle solution={solution} />}
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
