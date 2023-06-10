@@ -1,22 +1,34 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import letters from '../Data/letters';
 
-export default function Keypad({ usedKeys }) {
-  const [letter, setLetter] = useState(null);
+const Keypad = ({ usedKeys }) => {
+  const [keypadKeys, setKeypadKeys] = useState([]);
 
   useEffect(() => {
-    setLetter(letters);
+    setKeypadKeys(letters);
   }, []);
+
+  const handleButtonClick = (key) => {
+    // Handle button click logic here
+    console.log(`Clicked key: ${key}`);
+  };
 
   return (
     <div className='keypad'>
-      {letter && letter.map((l) => {
-        const color = usedKeys[l.key];
+      {keypadKeys.map((key) => {
+        const color = usedKeys[key.key];
         return (
-          <div key={l.key} className={color}>{l.key}</div>
+          <div
+            key={key.key}
+            className={color}
+            onClick={() => handleButtonClick(key.key)}
+          >
+            {key.key}
+          </div>
         );
       })}
     </div>
   );
-}
+};
+
+export default Keypad;

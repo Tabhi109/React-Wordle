@@ -238,3 +238,28 @@ code {
     justify-content: center;
   }
 }
+
+
+/* Fix for mobile Safari */
+.modal {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optional: Adjust the styles for smaller screens */
+@media screen and (max-width: 500px) {
+  .heading h1 {
+    font-size: 1.5rem;
+  }
+  .row > div {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    line-height: 30px;
+  }
+  .keypad {
+    max-width: 250px;
+  }
+  .keypad > div {
+    margin: 3px auto;
+  }
+}
