@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Modal({ isCorrect, solution, turn }) {
   const handleNewGame = () => {
@@ -23,5 +23,5 @@ export default function Modal({ isCorrect, solution, turn }) {
       )}
       <button className='newGameButton' onClick={handleNewGame}>New Game</button>
     </div>
-  )
+  );
 }
